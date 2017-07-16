@@ -68,6 +68,42 @@
       "translations": {}
     },
     {
+      "id": "587d7b83367417b2b2512b37",
+      "title": "Clarifying the In-Browser Console Log",
+      "description": [
+        "In an ordinary Javascript file loaded and run in your browser a <code>console.log()</code> will print exactly what you tell it to print to the console. In your in-browser text editor the process is slightly different and can be confusing at first. Any value passed to a <code>console.log</code> runs each set of test data as well as your function call.",
+        "This lends itself to some interesting behavior and might trip you up in the begining, because a line that you expect to see only once will run all of the variables presented in the tests as well as the in-browser text editor printing to the console.",
+        "If you would like to see only your single output and not have to worry about running through the test cycles you can use <code>console.clear()</code>",
+        "For more console based functions check out:",
+        "&nbsp<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Console\">MDN Console Reference</a>"
+      ],
+      "challengeSeed": [
+        "// Inspect the page with control+i or right click->inspect.",
+        "let outputTwice = \"This will print out 2 times\";",
+        "// Console log out the above variable.",
+        "let outputFour = \"This will print to the console 4 times, twice for the logs times two tests\";",
+        "// Then console log out this ^ one...",
+        "",
+        "// Modify the following console.logs",
+        "console.log();",
+        "// console.clear();",
+        "console.log();",
+        "// Want one variable only?",
+        "// Uncomment the console.clear() and make a note of which one prints"
+      ],
+      "tests": [
+        "assert(code.match(/console\\.log\\(outputTwice\\)/g), 'message: This should print out <code>outputTwice</code> two times.');",
+        "assert(code.match(/console\\.log\\(outputFour\\)/g), 'message: This should print out <code>outputFour</code> twice and <code>outputTwice</code> twice as well.');",
+        "assert(!code.match(/\\/\\/ console.clear\\(\\)/g), 'message: Which one prints out after <code>console.clear()</code> is uncommented?');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
       "id": "587d7b84367417b2b2512b34",
       "title": "Use typeof to Check the Type of a Variable",
       "description": [
